@@ -29,5 +29,10 @@ public class StringCalculatorTests{
     public void testSeparateByNewLine(){
         assertEquals(6, StringCalculator.Add("1\n2\n3"));
     }
+
+    @Test
+    public void testSeperateByCommaOrNewLine(){
+        assertEquals(6, StringCalculator.Add("1\n2,3"));
+    }
 }
 

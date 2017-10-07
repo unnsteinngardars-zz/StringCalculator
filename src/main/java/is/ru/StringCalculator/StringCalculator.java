@@ -6,7 +6,11 @@ public class StringCalculator{
         if(text.equals(""))
             return 0;
         else{
-            if(text.contains(",")){
+            if(text.contains("\n") || text.contains(",")){
+                String numbers [] = text.split("[\n,]");
+                return sum(numbers);
+            }
+            else if(text.contains(",")){
                 String numbers [] = text.split(",");
                 return sum(numbers);
             }
