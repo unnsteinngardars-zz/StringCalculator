@@ -8,10 +8,18 @@ public class StringCalculator{
         else{
             if(text.contains(",")){
                 String numbers [] = text.split(",");
-                return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+                int sum = 0;
+                for(String number: numbers){
+                    sum += toInt(number);
+                }
+                return sum;
             }
         }
         return 1;
+    }
+
+    private static int toInt(String number){
+        return Integer.parseInt(number);
     }
 
     public static void main(String[] args){
