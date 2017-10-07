@@ -38,12 +38,24 @@ public class StringCalculatorTests{
 
     @Test(expected = IllegalArgumentException.class)
     public void testNegativeNumber(){
-        StringCalculator.Add("-1");
+        try{
+            StringCalculator.Add("-1");
+        }
+        catch(IllegalArgumentException e){
+            System.out.print(e.getMessage());
+            throw(e);
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testNegativeNumbers(){
-        StringCalculator.Add("-1,-3");
+        try{
+            StringCalculator.Add("-1,-2,3,-4");
+        }
+        catch(IllegalArgumentException e){
+            System.out.print(e.getMessage());
+            throw(e);
+        }
     }
 }
 

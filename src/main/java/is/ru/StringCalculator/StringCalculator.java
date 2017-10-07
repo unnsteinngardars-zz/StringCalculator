@@ -15,7 +15,8 @@ public class StringCalculator{
             }
         }
         if(text.charAt(0) == '-'){
-            throw new IllegalArgumentException("Negatives not allowed: ");
+
+            throw new IllegalArgumentException("Negatives not allowed: " + text);
         }
         return toInt(text);
     }
@@ -36,7 +37,11 @@ public class StringCalculator{
             }
         }
         if(!negatives.isEmpty()){
-            throw new IllegalArgumentException("Negatives not allowed: ");
+            String negativeNumbers = "";
+            while(!negatives.isEmpty()){
+                negativeNumbers += negatives.dequeue();
+            }
+            throw new IllegalArgumentException("Negatives not allowed: " + negativeNumbers);
         }
         return sum;
     }
