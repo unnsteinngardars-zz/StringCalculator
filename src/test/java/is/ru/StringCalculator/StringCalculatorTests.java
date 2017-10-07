@@ -3,6 +3,7 @@ package is.ru.stringcalculator;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
+
 public class StringCalculatorTests{
 
     @Test
@@ -12,7 +13,7 @@ public class StringCalculatorTests{
 
     @Test
     public void testOneNumber(){
-        assertEquals(1, StringCalculator.Add("2"));
+        assertEquals(1, StringCalculator.Add("1"));
     }
 
     @Test
@@ -33,6 +34,11 @@ public class StringCalculatorTests{
     @Test
     public void testSeperateByCommaOrNewLine(){
         assertEquals(6, StringCalculator.Add("1\n2,3"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeNumber(){
+        StringCalculator.Add("-1");
     }
 }
 

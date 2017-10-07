@@ -1,5 +1,7 @@
 package is.ru.stringcalculator;
 
+import edu.princeton.cs.algs4.Queue;
+
 public class StringCalculator{
 
     public static int Add(String text){
@@ -7,21 +9,34 @@ public class StringCalculator{
             return 0;
         else{
             if(text.contains("\n") || text.contains(",")){
+                
                 String numbers [] = text.split("[\n,]");
                 return sum(numbers);
             }
         }
-        return 1;
+        if(text.charAt(0) == '-'){
+            throw new IllegalArgumentException("Negatives not allowed: ");
+        }
+        return toInt(text);
     }
 
     private static int toInt(String number){
         return Integer.parseInt(number);
     }
- 
     private static int sum(String [] numbers){
+        Queue<String> negatives = new Queue<String>();
         int sum = 0;
         for(String number: numbers){
-            sum += toInt(number);
+            if(number.charAt(0) == '-'){
+                negatives.enqueue(number);
+            }
+            else{
+                int num = toInt(number);
+                sum += num;
+            }
+        }
+        if(!negatives.isEmpty()){
+            throw new IllegalArgumentException("Negatives not allowed: ");
         }
         return sum;
     }

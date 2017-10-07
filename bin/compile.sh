@@ -1,1 +1,1 @@
-javac src/main/java/is/ru/stringcalculator/*.java -d classes
+javac -classpath "src/main/resources/algs4.jar:Classes/" src/main/java/is/ru/stringcalculator/*.java -d classes
