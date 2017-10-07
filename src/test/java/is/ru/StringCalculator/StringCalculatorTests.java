@@ -12,7 +12,12 @@ public class StringCalculatorTests{
 
     @Test
     public void testOneNumber(){
-        assertEquals(1, StringCalculator.Add("1"));
+        assertEquals(1, StringCalculator.Add("2"));
+    }
+
+    @Test
+    public void TestTwoNumbers(){
+        assertEquals(3, StringCalculator.Add("1,2"));
     }
 }
 
