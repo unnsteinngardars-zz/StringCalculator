@@ -16,13 +16,18 @@ public class StringCalculatorTests{
     }
 
     @Test
-    public void TestTwoNumbers(){
+    public void testTwoNumbers(){
         assertEquals(3, StringCalculator.Add("1,2"));
     }
 
     @Test
-    public void TestMultipleNumbers(){
+    public void testMultipleNumbers(){
         assertEquals(6, StringCalculator.Add("1,2,3"));
+    }
+
+    @Test
+    public void testSeparateByNewLine(){
+        assertEquals(6, StringCalculator.Add("1\n2\n3"));
     }
 }
 

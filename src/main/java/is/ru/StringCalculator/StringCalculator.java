@@ -10,6 +10,10 @@ public class StringCalculator{
                 String numbers [] = text.split(",");
                 return sum(numbers);
             }
+            else if(text.contains("\n")){
+                String numbers [] = text.split("\n");
+                return sum(numbers);
+            }
         }
         return 1;
     }
