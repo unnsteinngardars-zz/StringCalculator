@@ -40,5 +40,10 @@ public class StringCalculatorTests{
     public void testNegativeNumber(){
         StringCalculator.Add("-1");
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeNumbers(){
+        StringCalculator.Add("-1,-3");
+    }
 }
 
