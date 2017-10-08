@@ -18,11 +18,11 @@ public class StringCalculator{
 
             throw new IllegalArgumentException("Negatives not allowed: " + text);
         }
-        else{
-            if(toInt(text) > 1000)
-            return 0;
-        }
-        return toInt(text);
+        return validateNumber(toInt(text));
+    }
+    private static int validateNumber(int number){
+        if(number > 1000) return 0;
+        else return number;
     }
 
     private static int toInt(String number){
