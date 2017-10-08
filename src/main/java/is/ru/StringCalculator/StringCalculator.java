@@ -16,7 +16,7 @@ public class StringCalculator{
                 sub = text.substring(index+1);
                 text = sub;
             }
-            String numbers [] = text.split("[\n,]");
+            String numbers [] = text.split("[\n,"+delimeter+"]");
             return sum(numbers);
             }
     }
