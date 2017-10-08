@@ -84,8 +84,13 @@ public class StringCalculatorTests{
     }
 
     @Test
-    public void testMultipleDelimeters(){
+    public void testCustomDelimeterCommaAndNewline(){
         assertEquals(10, StringCalculator.Add("//;\n4;3,2\n1"));
+    }
+
+    @Test
+    public void testMultipleCustomDelimeters(){
+        assertEquals(10, StringCalculator.Add("//;+x\n4;3+2x1"));
     }
 
 }

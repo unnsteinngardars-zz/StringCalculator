@@ -6,13 +6,13 @@ public class StringCalculator{
 
     public static int Add(String text){
         String sub = "";
-        char delimeter = '\0';
+        String delimeter = "";
         if(text.equals(""))
             return 0;
         else{  
             if(text.startsWith("//")){
-                delimeter = text.charAt(2);
                 int index = text.indexOf("\n");
+                delimeter = text.substring(2, index);
                 sub = text.substring(index+1);
                 text = sub;
             }
