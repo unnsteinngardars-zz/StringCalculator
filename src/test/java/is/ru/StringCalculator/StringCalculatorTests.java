@@ -83,5 +83,10 @@ public class StringCalculatorTests{
         assertEquals(6, StringCalculator.Add("//;\n2;3;1"));
     }
 
+    @Test
+    public void testMultipleDelimeters(){
+        assertEquals(10, StringCalculator.Add("//;\n4;3,2\n1"));
+    }
+
 }
 
