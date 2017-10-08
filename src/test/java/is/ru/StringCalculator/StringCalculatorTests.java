@@ -78,5 +78,10 @@ public class StringCalculatorTests{
         assertEquals(3, StringCalculator.Add("//;\n2;1"));
     }
 
+    @Test
+    public void testCustomDelimeterWithMultipleNumbers(){
+        assertEquals(6, StringCalculator.Add("//;\n2;3;1"));
+    }
+
 }
 
