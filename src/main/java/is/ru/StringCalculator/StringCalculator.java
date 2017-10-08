@@ -5,21 +5,22 @@ import edu.princeton.cs.algs4.Queue;
 public class StringCalculator{
 
     public static int Add(String text){
+        String sub = "";
+        char delimeter = '\0';
         if(text.equals(""))
             return 0;
-        else{
-            if(text.contains("\n") || text.contains(",")){
-                
-                String numbers [] = text.split("[\n,]");
-                return sum(numbers);
+        else{  
+            if(text.startsWith("//")){
+                delimeter = text.charAt(2);
+                int index = text.indexOf("\n");
+                sub = text.substring(index+1);
+                text = sub;
             }
-        }
-        if(text.charAt(0) == '-'){
-
-            throw new IllegalArgumentException("Negatives not allowed: " + text);
-        }
-        return validateNumber(toInt(text));
+            String numbers [] = text.split("[\n,]");
+            return sum(numbers);
+            }
     }
+
     private static int validateNumber(int number){
         if(number > 1000) return 0;
         else return number;
@@ -28,6 +29,7 @@ public class StringCalculator{
     private static int toInt(String number){
         return Integer.parseInt(number);
     }
+    
     private static int sum(String [] numbers){
         Queue<String> negatives = new Queue<String>();
         int sum = 0;
@@ -36,7 +38,7 @@ public class StringCalculator{
                 negatives.enqueue(number);
             }
             else{
-                int num = toInt(number);
+                int num = validateNumber(toInt(number));
                 sum += num;
             }
         }
@@ -44,6 +46,7 @@ public class StringCalculator{
             String negativeNumbers = "";
             while(!negatives.isEmpty()){
                 negativeNumbers += negatives.dequeue();
+                if(negatives.size() > 0) negativeNumbers += ", ";
             }
             throw new IllegalArgumentException("Negatives not allowed: " + negativeNumbers);
         }
