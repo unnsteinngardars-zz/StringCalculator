@@ -69,6 +69,11 @@ public class StringCalculatorTests{
     }
 
     @Test
+    public void testMultipleNumbersAbove1000(){
+        assertEquals(3, StringCalculator.Add("1,2,2000,3000"));
+    }
+
+    @Test
     public void testCustomDelimeterWithOneNumber(){
         assertEquals(2, StringCalculator.Add("//;\n2"));
     }
