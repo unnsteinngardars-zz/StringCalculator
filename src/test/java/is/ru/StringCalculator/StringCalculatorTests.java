@@ -57,5 +57,10 @@ public class StringCalculatorTests{
             throw(e);
         }
     }
+
+    @Test
+    public void testOneNumberAbove1000(){
+        assertEquals(0, StringCalculator.Add("2000"));
+    }
 }
 

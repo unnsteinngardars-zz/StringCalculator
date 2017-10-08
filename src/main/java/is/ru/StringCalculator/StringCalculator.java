@@ -18,6 +18,10 @@ public class StringCalculator{
 
             throw new IllegalArgumentException("Negatives not allowed: " + text);
         }
+        else{
+            if(toInt(text) > 1000)
+            return 0;
+        }
         return toInt(text);
     }
 
